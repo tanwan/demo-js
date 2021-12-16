@@ -1,0 +1,17 @@
+{
+  "name": "demo-js",
+  "version": "1.0.0",
+  "description": "demo-js",
+  "main": "",
+  "author": "",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "js-cookie": "^3.0.1",
+    "jsdom": "^19.0.0",
+    "multer": "^1.4.4"
+  }
+}

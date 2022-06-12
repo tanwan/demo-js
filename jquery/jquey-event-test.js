@@ -68,10 +68,12 @@ describe('jquery event', () => {
                 console.log('MutationObserver:' + $('#dynamic-p').html())
                 // addedNodes返回所有新增的节点
                 console.log('MutationObserver addedNodes:' + $(mutations[0].addedNodes[0]).html())
+                // 取消监听
                 observer.disconnect();
             }
         })
-
+        
+        // 同一个MutationObserver对象重复调用observe是没有关系的,但是不同的MutationObserver的对象重复调用就相当于多次监听
         // 开始监听
         observer.observe(document.body, {
             // 监听属性

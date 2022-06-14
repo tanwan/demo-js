@@ -59,38 +59,5 @@ describe('jquery event', () => {
 
     })
 
-    // 元素添加事件
-    it('node add event', (done) => {
-        // 使用MutationObserver监听dom变化的事件
-        const observer = new MutationObserver(mutations => {
-            // mutations是多个事件的集合,可以遍历
-            if (document.querySelector('#dynamic-p')) {
-                console.log('MutationObserver:' + $('#dynamic-p').html())
-                // addedNodes返回所有新增的节点
-                console.log('MutationObserver addedNodes:' + $(mutations[0].addedNodes[0]).html())
-                // 取消监听
-                observer.disconnect();
-            }
-        })
-        
-        // 同一个MutationObserver对象重复调用observe是没有关系的,但是不同的MutationObserver的对象重复调用就相当于多次监听
-        // 开始监听
-        observer.observe(document.body, {
-            // 监听属性
-            attributes: true,
-            // 监听节点
-            childList: true,
-            // 监听目标元素的所有子孙元素
-            subtree: true
-        })
-
-        // 也可以使用DOMNodeInserted事件,现在已经不推荐使用了, 在jsdom也不会触发,可以直接使用浏览器打开jquery-test.html查看效果
-        $('body').on('DOMNodeInserted', (e) => {
-            console.log('addEventListener:' + $('#dynamic-p').html())
-            console.log('addEventListener relatedNode:' + e.target)
-        })
-
-        // 等待添加元素
-        setTimeout(() => { done() }, 2000)
-    }).timeout(3000)// jsdom默认超时时间为2s
+    // 添加元素的事件参考mutation-observer-test.js
 })

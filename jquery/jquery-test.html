@@ -48,8 +48,6 @@
             </select>
         </form>
     </div>
-    <div id="div8">
-    </div>
     <script>
         // load事件,在带有url的元素加载之后触发,如果有缓存的话,可能不会触发
         $(window).on('load', function () {
@@ -58,13 +56,6 @@
         // ready事件,在DOM已经加载之后触发
         $(function () {
             console.log('dom ready')
-            setTimeout(() => {
-                $('#div8').append($('<p id="dynamic-p" class="dynamic-p-class">dynamic p</p>'))
-            }, 1000)
-        })
-        $('body').on('DOMNodeInserted', (e) => {
-            console.log('html addEventListener:' + $('#dynamic-p').html())
-            console.log('html addEventListener relatedNode:' + e.target)
         })
     </script>
 </body>

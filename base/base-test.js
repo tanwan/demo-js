@@ -3,7 +3,7 @@ describe('base', () => {
     // const: 常量
     // let: 块作用域
     // var: 函数作用域
-    it('const let var',  () => {
+    it('const let var', () => {
         // const定义的变量不可以修改,而且必须初始化
         const constVar = 3
 
@@ -35,5 +35,4 @@ describe('base', () => {
             }, 1);
         }
     })
-}
-)
+})

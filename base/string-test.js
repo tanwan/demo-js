@@ -12,8 +12,8 @@ describe('conllection', () => {
         // includes: 包含 
         assert(str.includes('cde'))
         // replace: 只替换第一个
-        console.log(`replace:${str.replace('a','b')}`)
-        console.log(`replaceAll:${str.replaceAll('a','b')}`)
+        console.log(`replace:${str.replace('a', 'b')}`)
+        console.log(`replaceAll:${str.replaceAll('a', 'b')}`)
     })
 
 

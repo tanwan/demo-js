@@ -20,14 +20,14 @@ describe('MutationObserver', () => {
         // 使用MutationObserver监听dom变化的事件
         const observer = new MutationObserver(mutations => {
             // mutations是多个事件的集合,可以遍历
-            mutations.forEach(mutation=>{
+            mutations.forEach(mutation => {
                 // addedNodes返回所有新增的节点
                 console.log('MutationObserver addedNodes:' + mutation.addedNodes[0])
             })
             // 取消监听
             observer.disconnect()
         })
-        
+
         // ,但是不同的MutationObserver的对象重复调用就相当于多次监听
         let option = {
             // 监听属性
@@ -47,22 +47,22 @@ describe('MutationObserver', () => {
             window.addDynamicP()
             // 调用done表示此测试结束
             done()
-          
+
         });
     }).timeout(3000)// mochajs默认超时时间为2s,这边调整为3s
 
 
     it('multiple MutationObserver', () => {
-        let option = {attributes: true, childList: true, subtree: true }
+        let option = { attributes: true, childList: true, subtree: true }
         new MutationObserver(mutations => {
-            mutations.forEach(mutation=>{
+            mutations.forEach(mutation => {
                 console.log('MutationObserver addedNodes:' + mutation.addedNodes[0])
             })
         }).observe(document.body, option)
 
         // 不同的MutationObserver的对象重复调用就相当于多次监听
         new MutationObserver(mutations => {
-            mutations.forEach(mutation=>{
+            mutations.forEach(mutation => {
                 console.log('MutationObserver addedNodes:' + mutation.addedNodes[0])
             })
         }).observe(document.body, option)

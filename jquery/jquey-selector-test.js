@@ -97,10 +97,10 @@ describe('jquery selector', () => {
         $('input:password').each((i, el) => console.log('input:password:' + $(el).val()))
 
         // $('input:radio'): 所有type="radio"的input元素
-        $('input:radio').each((i, el) => console.log('input:radio:' + $(el).val()))
+        $('input:radio').each((i, el) => console.log('input:radio:' + $(el).is(':checked')))
 
-        // $('input:checkbox'): 所有type="checkbox"的input元素
-        $('input:checkbox').each((i, el) => console.log('input:checkbox:' + $(el).val()))
+        // $('input:checkbox'): 所有type="checkbox"的input元素 checkbox使用.is(':checked')判断是否选中
+        $('input:checkbox').each((i, el) => console.log('input:checkbox:' + $(el).is(':checked')))
 
         // $(':submit'): 所有submit元素
         $(':submit').each((i, el) => console.log(':submit:' + $(el).html()))
